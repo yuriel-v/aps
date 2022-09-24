@@ -10,7 +10,7 @@
         android:id="@+id/welcome_string"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello world!"
+        android:text="@string/hello_world"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:onClick="translate"
-        android:text="English"
+        android:text="@string/english_btn"
         app:layout_constraintEnd_toStartOf="@+id/welcome_string"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome_string" />
@@ -38,7 +38,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:onClick="translate"
-        android:text="Português"
+        android:text="@string/portuguese_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/welcome_string"
         app:layout_constraintTop_toBottomOf="@+id/welcome_string" />
@@ -48,10 +48,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="exitApp"
-        android:text="Exit"
+        android:text="@string/exit_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pt_btn" />
+
+    <TextView
+        android:id="@+id/teste1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/teste1_textbox"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/teste2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/teste2_textbox"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teste1" />
+
+    <EditText
+        android:id="@+id/teste3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:hint="@string/teste3_hint"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teste2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
