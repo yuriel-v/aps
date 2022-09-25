@@ -4,66 +4,120 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E6EFF3"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/kelvin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/kelvin_typebox"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        android:minHeight="48dp"
-        android:textAlignment="center"
-        android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/exit_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/celsius" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/celsius"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/celsius_typebox"
-        android:importantForAutofill="no"
-        android:inputType="numberSigned|numberDecimal"
-        android:minHeight="48dp"
-        android:textAlignment="center"
-        android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/exit_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="641dp">
 
-    <Button
-        android:id="@+id/exit_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:onClick="exitApp"
-        android:text="@string/exit_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="401dp"
+                android:layout_height="298dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/fahrenheit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/fahrenheit_typebox"
-        android:importantForAutofill="no"
-        android:inputType="number|numberDecimal"
-        android:minHeight="48dp"
-        android:textAlignment="center"
-        android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/celsius"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="391dp"
+                    android:layout_height="272dp"
+                    android:background="@drawable/top_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/txtLogo"
+                        android:layout_width="285dp"
+                        android:layout_height="58dp"
+                        android:layout_marginTop="22dp"
+                        android:text="Temperature Check"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintStart_toStartOf="@+id/imageView"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="179dp"
+                        android:layout_height="188dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_thermometer_temperature_svgrepo_com" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="333dp"
+                android:layout_height="336dp"
+                android:layout_gravity="fill_vertical"
+                android:background="@drawable/white_background"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:flow_horizontalAlign="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                <EditText
+                    android:id="@+id/fahrenheit"
+                    android:layout_width="247dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/fahrenheit_typebox"
+                    android:importantForAutofill="no"
+                    android:inputType="number|numberDecimal"
+                    android:minHeight="48dp"
+                    android:textAlignment="center"
+                    android:textColorHint="#757575" />
+
+                <EditText
+                    android:id="@+id/celsius"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/celsius_typebox"
+                    android:importantForAutofill="no"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:minHeight="48dp"
+                    android:textAlignment="center"
+                    android:textColorHint="#757575" />
+
+                <EditText
+                    android:id="@+id/kelvin"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/kelvin_typebox"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:minHeight="48dp"
+                    android:textAlignment="center"
+                    android:textColorHint="#757575" />
+
+                <Button
+                    android:id="@+id/exit_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="exitApp"
+                    android:shadowColor="#F8F8F8"
+                    android:text="@string/exit_btn"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

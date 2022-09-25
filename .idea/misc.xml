@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dropi/Documents/GitHub/aps/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1405" />
+        <entry key="..\:/Users/Dropi/Documents/GitHub/aps/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1405" />
+        <entry key="..\:/Users/Dropi/Documents/GitHub/aps/app/src/main/res/drawable/ic_thermometer_temperature_svgrepo_com.xml" value="0.1405" />
+        <entry key="..\:/Users/Dropi/Documents/GitHub/aps/app/src/main/res/drawable/top_background.xml" value="0.303" />
+        <entry key="..\:/Users/Dropi/Documents/GitHub/aps/app/src/main/res/drawable/white_background.xml" value="0.269" />
+        <entry key="..\:/Users/Dropi/Documents/GitHub/aps/app/src/main/res/layout/activity_main.xml" value="0.2064814814814815" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
       </map>
     </option>
