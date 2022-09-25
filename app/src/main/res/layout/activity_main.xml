@@ -85,7 +85,7 @@
         android:ems="10"
         android:hint="@string/teste3_hint"
         android:importantForAutofill="no"
-        android:inputType="number"
+        android:inputType="number|numberDecimal"
         android:minHeight="48dp"
         android:textColorHint="#757575"
         app:layout_constraintStart_toStartOf="parent"
