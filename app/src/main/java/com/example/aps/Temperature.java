@@ -3,32 +3,41 @@ package com.example.aps;
 public abstract class Temperature
 {
     // Fahrenheit to Celsius
-    public static double fromFtoC(double value) {
-        return (value - 32) * 5 / 9;
-    }
+    private static double fromFtoC(double value) { return (value - 32) * 5 / 9; }
 
     // Fahrenheit to Kelvin
-    public static double fromFtoK(double value) {
-        return fromFtoC(value) + 273.15;
-    }
+    private static double fromFtoK(double value) { return fromFtoC(value) + 273.15; }
 
     // Celsius to Kelvin
-    public static double fromCtoK(double value) {
-        return value + 273.15;
-    }
+    private static double fromCtoK(double value) { return value + 273.15; }
 
     // Celsius to Fahrenheit
-    public static double fromCtoF(double value) {
-        return value * 1.8 + 32;
-    }
+    private static double fromCtoF(double value) { return value * 1.8 + 32; }
 
     // Kelvin to Celsius
-    public static double fromKtoC(double value) {
-        return value - 273.15;
-    }
+    private static double fromKtoC(double value) { return value - 273.15; }
 
     // Kelvin to Fahrenheit
-    public static double fromKtoF(double value) {
-        return (value - 273.15) * 1.8 + 32;
+    private static double fromKtoF(double value) { return (value - 273.15) * 1.8 + 32; }
+
+    public static double[] calcTemperature(TemperatureType temperature,double value) {
+        double[] temperatures = new double[2];
+
+        switch(temperature) {
+            case CELSIUS:
+                temperatures[0] = fromCtoF(value);
+                temperatures[1] = fromCtoK(value);
+                return temperatures;
+            case FAHRENHEIT:
+                temperatures[0] = fromFtoC(value);
+                temperatures[1] = fromFtoK(value);
+                return temperatures;
+            case KELVIN:
+                temperatures[0] = fromKtoC(value);
+                temperatures[1] = fromKtoF(value);
+                return temperatures;
+            default:
+                return temperatures;
+        }
     }
 }

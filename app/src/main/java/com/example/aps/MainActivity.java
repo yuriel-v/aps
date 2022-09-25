@@ -6,73 +6,66 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity
-{
+public class MainActivity extends AppCompatActivity {
+
+    private static boolean isChanged = false;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addDynamicText();
     }
 
-    private void addDynamicText()
-    {
-        EditText field1 = findViewById(R.id.teste3);
-        TextView one = findViewById(R.id.teste1);
-        TextView two = findViewById(R.id.teste2);
+    private void addDynamicText() {
+        EditText fahrenheit = findViewById(R.id.fahrenheit);
+        EditText celsius = findViewById(R.id.celsius);
+        EditText kelvin = findViewById(R.id.kelvin);
 
-        field1.addTextChangedListener(new TextWatcher() {
+        fahrenheit.addTextChangedListener(calcTemperature(
+            TemperatureType.FAHRENHEIT,
+            celsius,
+            kelvin
+        ));
+        celsius.addTextChangedListener(calcTemperature(
+            TemperatureType.CELSIUS,
+            fahrenheit,
+            kelvin
+        ));
+        kelvin.addTextChangedListener(calcTemperature(
+            TemperatureType.KELVIN,
+            celsius,
+            fahrenheit
+        ));
+    }
+
+    public void exitApp(View view) {
+        finish();
+        System.exit(0);
+    }
+
+    private TextWatcher calcTemperature(TemperatureType temperature,EditText... field) {
+        return new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (charSequence.length() > 0)
+                if (charSequence.length() > 0 && !isChanged)
                 {
-                    Double value = Double.parseDouble(charSequence.toString());
-                    one.setText(String.format("%.2f", value * 2));
-                    two.setText(String.format("%.2f", value * value));
-                }
-                else
-                {
-                    one.setText("< *2 >");
-                    two.setText("< ^2 >");
+                    double value = Double.parseDouble(charSequence.toString());
+                    isChanged = true;
+                    field[0].setText(String.format("%.2f", Temperature.calcTemperature(temperature,value)[0]));
+                    field[1].setText(String.format("%.2f", Temperature.calcTemperature(temperature,value)[1]));
+                    isChanged = false;
                 }
             }
 
             @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-    }
-
-    public void translate(View view)
-    {
-        TextView msg = findViewById(R.id.welcome_string);
-        Button exitBtn = findViewById(R.id.exit_btn);
-        switch (view.getId())
-        {
-            case (R.id.pt_btn):
-                msg.setText("Olá mundo!");
-                exitBtn.setText("Sair");
-                break;
-            case (R.id.en_btn):
-                msg.setText("Hello world!");
-                exitBtn.setText("Exit");
-                break;
-        }
-    }
-
-    public void exitApp(View view)
-    {
-        finish();
-        System.exit(0);
+            public void afterTextChanged(Editable editable) { }
+        };
     }
 }
