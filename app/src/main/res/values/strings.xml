@@ -7,4 +7,7 @@
     <string name="english_btn">English</string>
     <string name="portuguese_btn">Português</string>
     <string name="teste3_hint">Número</string>
+    <string name="kelvin_typebox">Kelvin</string>
+    <string name="celsius_typebox">Celsius</string>
+    <string name="fahrenheit_typebox">Fahrenheit</string>
 </resources>
