@@ -2,7 +2,9 @@
 Atividade Prática Supervisionada para a UniCarioca, na disciplina Desenvolvimento de Aplicações Móveis.
 
 ### Integrantes
+- Davi Sousa
+- João Pessanha
 - Leonardo Valim
 - Mateus Lopes
-- Davi Sousa
 - Mateus Meirelles
+- Pedro Souza
