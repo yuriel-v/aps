@@ -80,6 +80,7 @@
                     android:inputType="number|numberDecimal"
                     android:minHeight="48dp"
                     android:textAlignment="center"
+                    android:textColor="@color/teal_200"
                     android:textColorHint="#757575" />
 
                 <EditText
@@ -92,6 +93,7 @@
                     android:inputType="numberSigned|numberDecimal"
                     android:minHeight="48dp"
                     android:textAlignment="center"
+                    android:textColor="@color/teal_200"
                     android:textColorHint="#757575" />
 
                 <EditText
@@ -104,6 +106,7 @@
                     android:inputType="numberDecimal"
                     android:minHeight="48dp"
                     android:textAlignment="center"
+                    android:textColor="@color/teal_200"
                     android:textColorHint="#757575" />
 
                 <Button
