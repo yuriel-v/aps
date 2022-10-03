@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,6 +19,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addDynamicText();
+        addClickHandler();
+    }
+
+    private void addClickHandler()
+    {
+        Button exitBtn = findViewById(R.id.exit_btn);
+        exitBtn.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                finish();
+                System.exit(0);
+            }
+        });
     }
 
     private void addDynamicText()
@@ -41,11 +56,6 @@ public class MainActivity extends AppCompatActivity {
             celsius,
             fahrenheit
         ));
-    }
-
-    public void exitApp(View view) {
-        finish();
-        System.exit(0);
     }
 
     private TextWatcher makeTextWatcher(TemperatureType temperature, EditText field1, EditText field2)

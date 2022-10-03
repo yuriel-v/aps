@@ -113,7 +113,6 @@
                     android:id="@+id/exit_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="exitApp"
                     android:shadowColor="#F8F8F8"
                     android:text="@string/exit_btn"
                     android:textAlignment="center" />
