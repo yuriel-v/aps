@@ -55,7 +55,7 @@ public class PeriodicTable
 
                 requested.fetched = true;
                 requested.symbol = (String) element.get("symbol");
-                requested.mass = (String) element.get("atomicMass");
+                requested.mass = (element.get("atomicMass") instanceof List<?>) ? Double.toString(((List<Double>) element.get("atomicMass")).get(0)) : (String) element.get("atomicMass");
                 requested.meltingPoint = (element.get("meltingPoint") instanceof String) ? Double.NaN : (double) element.get("meltingPoint");
                 requested.boilingPoint = (element.get("boilingPoint") instanceof String) ? Double.NaN : (double) element.get("boilingPoint");
             } catch (Exception e) {
