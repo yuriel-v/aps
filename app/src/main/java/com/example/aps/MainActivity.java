@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,9 +25,10 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addDynamicText();
-        addClickHandler();
+        //addDynamicText();
+        addExitClickHandler();
         instancePeriodicTable();
+        addTextListener();
     }
 
     private void instancePeriodicTable()
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         catch (IOException e) { e.printStackTrace(); }
     }
 
-    private void addClickHandler()
+    private void addExitClickHandler()
     {
         Button exitBtn = findViewById(R.id.exit_btn);
         exitBtn.setOnClickListener(new View.OnClickListener()
@@ -53,7 +57,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void addDynamicText()
+    private void addTextListener()
+    {
+        Spinner spinner = findViewById(R.id.dropdown);
+        TextView text = findViewById(R.id.title_name);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                text.setText(String.format("Position %d", position));
+                // Here you change your value or do whatever you want
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // Here comes when you didn't choose anything from your spinner logic
+            }
+
+        });
+    }
+
+    /* private void addDynamicText()
     {
         EditText fahrenheit = findViewById(R.id.fahrenheit);
         EditText celsius = findViewById(R.id.celsius);
@@ -74,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             celsius,
             fahrenheit
         ));
-    }
+    }*/
 
     private TextWatcher makeTextWatcher(TemperatureType temperature, EditText field1, EditText field2)
     {

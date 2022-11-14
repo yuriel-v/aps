@@ -16,108 +16,200 @@
             android:layout_width="match_parent"
             android:layout_height="641dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
-                android:layout_width="401dp"
-                android:layout_height="298dp"
+            <Button
+                android:id="@+id/exit_btn"
+                android:layout_width="138dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="136dp"
+                android:layout_marginEnd="137dp"
+                android:layout_marginBottom="2dp"
+                android:shadowColor="#F8F8F8"
+                android:text="@string/exit_btn"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Spinner
+                android:id="@+id/dropdown"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="1dp"
+                android:background="#ACACAC"
+                android:entries="@array/periodic_elements"
+                android:minHeight="48dp"
+                android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="391dp"
-                    android:layout_height="272dp"
-                    android:background="@drawable/top_background"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/txtLogo"
-                        android:layout_width="285dp"
-                        android:layout_height="58dp"
-                        android:layout_marginTop="22dp"
-                        android:text="Temperature Check"
-                        android:textSize="30dp"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView"
-                        app:layout_constraintStart_toStartOf="@+id/imageView"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="179dp"
-                        android:layout_height="188dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/ic_thermometer_temperature_svgrepo_com" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
-                android:layout_width="333dp"
-                android:layout_height="336dp"
-                android:layout_gravity="fill_vertical"
-                android:background="@drawable/white_background"
-                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="453dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:orientation="vertical"
-                app:flow_horizontalAlign="center"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/exit_btn"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+                app:layout_constraintTop_toBottomOf="@+id/dropdown">
 
-                <EditText
-                    android:id="@+id/fahrenheit"
-                    android:layout_width="247dp"
+                <TextView
+                    android:id="@+id/title_name"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/fahrenheit_typebox"
-                    android:importantForAutofill="no"
-                    android:inputType="number|numberDecimal"
-                    android:minHeight="48dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/teal_200"
-                    android:textColorHint="#757575" />
+                    android:text="@string/element_name"
+                    android:textSize="20sp" />
 
-                <EditText
-                    android:id="@+id/celsius"
-                    android:layout_width="250dp"
+                <TextView
+                    android:id="@+id/title_symbol"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/celsius_typebox"
-                    android:importantForAutofill="no"
-                    android:inputType="numberSigned|numberDecimal"
-                    android:minHeight="48dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/teal_200"
-                    android:textColorHint="#757575" />
+                    android:text="@string/element_symbol"
+                    android:textSize="20sp" />
 
-                <EditText
-                    android:id="@+id/kelvin"
-                    android:layout_width="250dp"
+                <TextView
+                    android:id="@+id/title_number"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/kelvin_typebox"
-                    android:importantForAutofill="no"
-                    android:inputType="numberDecimal"
-                    android:minHeight="48dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/teal_200"
-                    android:textColorHint="#757575" />
+                    android:text="@string/element_number"
+                    android:textSize="20sp" />
 
-                <Button
-                    android:id="@+id/exit_btn"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/title_mass"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:shadowColor="#F8F8F8"
-                    android:text="@string/exit_btn"
-                    android:textAlignment="center" />
+                    android:text="@string/element_mass"
+                    android:textSize="20sp" />
 
+                <TextView
+                    android:id="@+id/title_melting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/element_meltingpt"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/blank1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/blank2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/blank3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/title_boiling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/element_boilingpt"
+                    android:textSize="20sp" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="453dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/exit_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/dropdown">
+
+                <TextView
+                    android:id="@+id/chosen_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/chosen_symbol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/chosen_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/chosen_mass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/blank4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/chosen_melting_kelvin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/chosen_melting_celsius"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/chosen_melting_fahrenheit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/blank5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/chosen_boiling_kelvin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/chosen_boiling_celsius"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/chosen_boiling_fahrenheit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="205dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
