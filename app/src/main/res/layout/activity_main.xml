@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#000000"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,6 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/element_name"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
@@ -71,6 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/element_symbol"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
@@ -78,6 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/element_number"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
@@ -85,6 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/element_mass"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
@@ -92,24 +97,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/element_meltingpt"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/blank1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/blank2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/blank3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
@@ -117,6 +126,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/element_boilingpt"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -135,72 +145,84 @@
                     android:id="@+id/chosen_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/chosen_symbol"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/chosen_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/chosen_mass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/blank4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/chosen_melting_kelvin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/chosen_melting_celsius"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/chosen_melting_fahrenheit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/blank5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/chosen_boiling_kelvin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/chosen_boiling_celsius"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/chosen_boiling_fahrenheit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="20sp" />
             </LinearLayout>
 

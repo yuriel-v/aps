@@ -1,5 +1,7 @@
 package com.example.aps;
 
+import android.os.StrictMode;
+
 import org.apache.commons.lang3.StringUtils;
 import org.yaml.snakeyaml.Yaml;
 
@@ -31,20 +33,21 @@ public class PeriodicTable
             PeriodicElement entry = new PeriodicElement();
             entry.name = StringUtils.capitalize(elementName);
             entry.number = i;
+            this.table.add(entry);
             ++i;
         }
     }
 
-    public PeriodicElement getElementByNumber(short number)
+    public PeriodicElement getElementByIndex(short number)
     {
-        if (number < 1 || number > 118) {
+        if (number < 0 || number > 117) {
             return null;
         }
-        PeriodicElement requested = this.table.get(number - 1);
+        PeriodicElement requested = this.table.get(number);
         if (!requested.fetched) {
             try {
                 String json = readUrl(
-                        String.format("https://periodic-table-elements-info.herokuapp.com/element/atomicNumber/%d", number)
+                        String.format("https://periodic-table-elements-info.herokuapp.com/element/atomicNumber/%d", number + 1)
                 );
                 Type type = new TypeToken<List<HashMap<String, Object>>>() {}.getType();
                 List<Map<String, Object>> response = new Gson().fromJson(json, type);
@@ -53,9 +56,10 @@ public class PeriodicTable
                 requested.fetched = true;
                 requested.symbol = (String) element.get("symbol");
                 requested.mass = (String) element.get("atomicMass");
-                requested.meltingPoint = (element.get("meltingPoint") instanceof String) ? Float.NaN : (float) element.get("meltingPoint");
-                requested.boilingPoint = (element.get("boilingPoint") instanceof String) ? Float.NaN : (float) element.get("boilingPoint");
+                requested.meltingPoint = (element.get("meltingPoint") instanceof String) ? Double.NaN : (double) element.get("meltingPoint");
+                requested.boilingPoint = (element.get("boilingPoint") instanceof String) ? Double.NaN : (double) element.get("boilingPoint");
             } catch (Exception e) {
+                e.printStackTrace();
                 return null;
             }
         }
@@ -65,6 +69,10 @@ public class PeriodicTable
     // copied off stack overflow, as expected
     // screw java and its low level apis
     private static String readUrl(String urlString) throws Exception {
+        // cheap fix for network on main thread exception
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         BufferedReader reader = null;
         try {
             URL url = new URL(urlString);

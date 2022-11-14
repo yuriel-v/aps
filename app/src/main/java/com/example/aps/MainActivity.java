@@ -60,12 +60,51 @@ public class MainActivity extends AppCompatActivity {
     private void addTextListener()
     {
         Spinner spinner = findViewById(R.id.dropdown);
-        TextView text = findViewById(R.id.title_name);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                text.setText(String.format("Position %d", position));
-                // Here you change your value or do whatever you want
+                TextView elementName = findViewById(R.id.chosen_name);
+                TextView elementNumber = findViewById(R.id.chosen_number);
+                TextView elementSymbol = findViewById(R.id.chosen_symbol);
+                TextView elementMass = findViewById(R.id.chosen_mass);
+                TextView elementBoilingKelvin = findViewById(R.id.chosen_boiling_kelvin);
+                TextView elementBoilingCelsius = findViewById(R.id.chosen_boiling_celsius);
+                TextView elementBoilingFahrenheit = findViewById(R.id.chosen_boiling_fahrenheit);
+                TextView elementMeltingKelvin = findViewById(R.id.chosen_melting_kelvin);
+                TextView elementMeltingCelsius = findViewById(R.id.chosen_melting_celsius);
+                TextView elementMeltingFahrenheit = findViewById(R.id.chosen_melting_fahrenheit);
+
+                PeriodicElement chosenElement = table.getElementByIndex((short) position);
+                elementName.setText(chosenElement.name);
+                elementNumber.setText(Integer.toString(chosenElement.number));
+                elementSymbol.setText(chosenElement.symbol);
+                elementMass.setText(chosenElement.mass);
+                if (Double.isNaN(chosenElement.boilingPoint))
+                {
+                    elementBoilingKelvin.setText("Desconhecido");
+                    elementBoilingCelsius.setText("Desconhecido");
+                    elementBoilingFahrenheit.setText("Desconhecido");
+                }
+                else
+                {
+                    double[] temperatures = Temperature.calcTemperature(TemperatureType.KELVIN, chosenElement.boilingPoint);
+                    elementBoilingKelvin.setText(String.format("%.1f K", chosenElement.boilingPoint));
+                    elementBoilingCelsius.setText(String.format("%.1f ºC", temperatures[0]));
+                    elementBoilingFahrenheit.setText(String.format("%.1f ºF", temperatures[1]));
+                }
+                if (Double.isNaN(chosenElement.meltingPoint))
+                {
+                    elementMeltingKelvin.setText("Desconhecido");
+                    elementMeltingCelsius.setText("Desconhecido");
+                    elementMeltingFahrenheit.setText("Desconhecido");
+                }
+                else
+                {
+                    double[] temperatures = Temperature.calcTemperature(TemperatureType.KELVIN, chosenElement.meltingPoint);
+                    elementMeltingKelvin.setText(String.format("%.1f K", chosenElement.meltingPoint));
+                    elementMeltingCelsius.setText(String.format("%.1f ºC", temperatures[0]));
+                    elementMeltingFahrenheit.setText(String.format("%.1f ºF", temperatures[1]));
+                }
             }
 
             @Override

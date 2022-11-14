@@ -2,7 +2,7 @@
     <string name="app_name">aps</string>
     <string name="teste1_textbox"><![CDATA[< *2 >]]></string>
     <string name="teste2_textbox"><![CDATA[< ^2 >]]></string>
-    <string name="exit_btn">Exit</string>
+    <string name="exit_btn">Sair</string>
     <string name="hello_world">Hello world!</string>
     <string name="english_btn">English</string>
     <string name="portuguese_btn">Português</string>
