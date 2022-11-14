@@ -9,9 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 public class MainActivity extends AppCompatActivity {
 
     private static boolean isChanged = false;
+    public PeriodicTable table;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -20,6 +24,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         addDynamicText();
         addClickHandler();
+        instancePeriodicTable();
+    }
+
+    private void instancePeriodicTable()
+    {
+        try
+        {
+            InputStream ins = getResources().openRawResource(
+                    getResources().getIdentifier("elements", "raw", getPackageName())
+            );
+            this.table = new PeriodicTable(ins);
+            ins.close();
+        }
+        catch (IOException e) { e.printStackTrace(); }
     }
 
     private void addClickHandler()

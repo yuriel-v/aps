@@ -2,12 +2,13 @@ package com.example.aps;
 
 public class PeriodicElement
 {
-    private int number;
-    private String symbol;
-    private String name;
-    private String mass;
-    private Object meltingPoint;  // int or string
-    private Object boilingPoint;
+    public short number;
+    public String symbol;
+    public String name;
+    public String mass;
+    public float meltingPoint;
+    public float boilingPoint;
+    public boolean fetched = false;
 
     public PeriodicElement() { }
 }
